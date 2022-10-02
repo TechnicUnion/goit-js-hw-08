@@ -20,9 +20,11 @@ function onFormInput(evt) {
 
 function onSubmit(evt) {
   evt.preventDefault();
-  evt.currentTarget.reset();
-  console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
-  localStorage.removeItem(STORAGE_KEY);
+  if (email.value && message.value) {
+    evt.currentTarget.reset();
+    console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
+    localStorage.removeItem(STORAGE_KEY);
+  }
 }
 
 function checksLocalStorage() {
