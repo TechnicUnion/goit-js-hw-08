@@ -7,7 +7,7 @@ const STORAGE_KEY = 'feedback-form-state';
 const feedback = {};
 
 checksLocalStorage();
-
+console.log(feedback);
 form.addEventListener('input', throttle(onFormInput, 500));
 form.addEventListener('submit', onSubmit);
 
@@ -27,8 +27,10 @@ function onSubmit(evt) {
 
 function checksLocalStorage() {
   const saveFeedback = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  if (saveFeedback) {
+  if (saveFeedback.email) {
     email.value = saveFeedback.email;
-    message.value = saveFeedback.message;
+  }
+  if (saveFeedback.message) {
+    email.value = saveFeedback.email;
   }
 }
