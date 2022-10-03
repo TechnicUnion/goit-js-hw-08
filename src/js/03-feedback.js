@@ -20,7 +20,7 @@ function onSubmit(evt) {
   evt.preventDefault();
   if (email.value && message.value) {
     evt.currentTarget.reset();
-    console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
+    console.log(feedback);
     localStorage.removeItem(STORAGE_KEY);
   }
 }
