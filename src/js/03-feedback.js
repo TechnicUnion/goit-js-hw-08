@@ -29,13 +29,12 @@ function onSubmit(evt) {
 }
 
 function checksLocalStorage() {
-  const saveFeedback = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  if (saveFeedback) {
-    for (key in saveFeedback) {
+  if (feedback) {
+    for (key in feedback) {
       if (key === emailRef.name) {
-        emailRef.value = saveFeedback[key];
+        emailRef.value = feedback[key];
       } else if (key === messageRef.name) {
-        messageRef.value = saveFeedback[key];
+        messageRef.value = feedback[key];
       }
     }
   }
