@@ -30,7 +30,7 @@ function onSubmit(evt) {
 
 function checksLocalStorage() {
   if (feedback) {
-    for (key in feedback) {
+    for (const key in feedback) {
       if (key === emailRef.name) {
         emailRef.value = feedback[key];
       } else if (key === messageRef.name) {
